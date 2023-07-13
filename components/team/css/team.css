@@ -12,9 +12,6 @@
 }
 
 
-
-
-
 body {
   font-family: Arial, sans-serif;
   margin: auto;
@@ -57,7 +54,7 @@ body::-webkit-scrollbar-track {
 .profile-card {
   display: flex;
   position: relative;
-  top: 100px;
+
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -201,7 +198,7 @@ body::-webkit-scrollbar-track {
 
 .card-container {
   position: relative;
-  top: 70px;
+ top: 250px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -209,6 +206,8 @@ body::-webkit-scrollbar-track {
   left: -45px;
   margin-bottom: 100px;
 }
+
+
 
 .profile-cards {
   height: 300px;
@@ -255,8 +254,13 @@ body::-webkit-scrollbar-track {
     margin-bottom: 100px;
 
   }
-
+.info{
+  padding: 2px;
+}
   
+.footer{
+  font-size: small;
+}
 
   .team {
     color: #151965;
@@ -269,4 +273,8 @@ body::-webkit-scrollbar-track {
     font-size: 26px;
   }
 
+  .connection{
+    position: relative;
+    top: 40px;
+  }
 }
