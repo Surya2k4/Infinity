@@ -7,6 +7,12 @@
 
 body{
      background: linear-gradient(to bottom right, #CDFCF6, #ffffff);;
+      margin: auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+html,body{
+  overflow-x: hidden;
 }
       
 .team {
