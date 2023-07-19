@@ -27,7 +27,7 @@ body::-webkit-scrollbar-track {
   scroll-behavior: smooth;
   overflow-x: hidden;
   
- 
+ font-family: poppins, monospace;
 }
 
 /*navbar*/
