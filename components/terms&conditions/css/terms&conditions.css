@@ -50,9 +50,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: scroll;
+ 
   scroll-behavior: smooth;
-  overflow-x: hidden;
+
   
  font-family: poppins, monospace;
 }
