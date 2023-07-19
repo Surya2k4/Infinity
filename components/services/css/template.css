@@ -100,6 +100,7 @@ li {
   font-size: 18px;
   transition: transform 0.3s ease-in-out;
   padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .menu li:hover {
@@ -160,6 +161,7 @@ input[type=checkbox] {
   font-size: 20px;
   margin-top: 1rem;
   user-select: none;
+  margin-bottom:1rem;
 }
 
 .hamburger span {
