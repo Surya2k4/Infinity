@@ -653,6 +653,32 @@ input[type=checkbox] {
   }
 }
 
+@media (max-width: 1299px ) {
+    .nav-links a {
+    color: #151965;
+    font-size: 15px;
+    font-weight: 500;
+  }
+ 
+  }
+
+ 
+
+  @media (max-width: 1180px ) {
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+        padding-bottom: 10rem;
+        background: linear-gradient(to bottom, #8EA7E9, #A3D8F4);
+        overflow-y: hidden;
+        color: #fff;
+      }
+      
+  }
+
 /*footer*/
 
 /*mediaquery*/
