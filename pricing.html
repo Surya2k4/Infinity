@@ -14,6 +14,20 @@
     <title>Pricing</title>
     <link rel="stylesheet" href="components/pricing/css/template.css">
     <link rel="stylesheet" href="components/pricing/css/pricing.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWHBXWW7Z0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NWHBXWW7Z0');
+    </script>
 </head>
 
 
@@ -160,42 +174,45 @@
     </div>
     <br />
     <div class="card1" data-aos="fade-right" data-aos-duration="1000">
-
         <h3 class="h3tag1w" data-aos="fade-left" data-aos-duration="1110">Enter your details below to get a callback!
         </h3>
-        <form id="contact-form">
-            <div class="form-group" data-aos="fade-left" data-aos-duration="1100">
+
+        <form id="contact-form" data-aos="fade-left" data-aos-duration="1100">
+            <div class="form-group" data-aos="fade-left" data-aos-duration="1110">
                 <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required>
+                <input type="text" id="firstname" name="firstname" pattern="[A-Za-z]+"
+                    title="First name should contain only alphabets" required>
             </div>
-            <div class="form-group" data-aos="fade-right" data-aos-duration="1110">
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required>
+
+            <div class="form-group" data-aos="fade-right" data-aos-duration="1100">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" pattern="[A-Za-z]+"
+                    title="Last name should contain only alphabets" required>
             </div>
-            <div class="form-group" data-aos="fade-left" data-aos-duration="1100">
+
+            <div class="form-group" data-aos="fade-left" data-aos-duration="1110">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <div class="form-group" data-aos="fade-left" data-aos-duration="1110">
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" title="Phone number must be 10 digits"
-                    required>
+            <div class="form-group" data-aos="fade-left" data-aos-duration="1100"><label for="tel">Phone:</label><input
+                    type="tel" id="phone" name="phone" pattern="[0-9]{10}" title="Phone number must be 10 digits"
+                    required></div>
+            <div class="form-group" data-aos="fade-right" data-aos-duration="1110"><label for="city">City:</label><input
+                    type="text" id="city" name="city" pattern="[A-Za-z]+"
+                    title="City name should contain only alphabets" required></div>
+            <div class="form-group" data-aos="fade-left" data-aos-duration="1100"><label for="text">State:</label><input
+                    type="text" id="state" name="state" pattern="[A-Za-z]+"
+                    title="State name should contain only alphabets" required></div>
+            <div class="form-group" data-aos="fade-right" data-aos-duration="1110"><label
+                    for="pincode">Pincode</label><input type="text" id="pincode" name="pincode" pattern="[0-9]{6}"
+                    title="Enter Valid Pincode (example: 600088)" required></div>
+
+            <div class="button">
+                <button class="btn" id="submit-btn">Submit</button>
             </div>
-            <div class="form-group" data-aos="fade-right" data-aos-duration="1100">
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" required>
-            </div>
-            <div class="form-group" data-aos="fade-left" data-aos-duration="1110">
-                <label for="state">State:</label>
-                <input type="text" id="state" name="state" required>
-            </div>
-            <div class="form-group" data-aos="fade-right" data-aos-duration="1100">
-                <label for="pincode">Pincode:</label>
-                <input type="text" id="pincode" name="pincode" required>
-            </div>
-            <button class="btn" type="submit" data-aos="fade-left" data-aos-duration="1300">Proceed</button>
         </form>
     </div>
+
     <footer id="container-fluid1">
         <div class="owner row p-2 pb-4">
             <div class="col-lg-4 d-flex pl-4 pr-4">
@@ -327,6 +344,9 @@
     </script>
     <script src="components/pricing/js/template.js"></script>
     <script src="components/pricing/js/forms.js"></script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </body>
 
 </html>
