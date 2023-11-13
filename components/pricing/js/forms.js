@@ -1,58 +1,114 @@
-const form = document.getElementById('contact-form');
+/* document.getElementById("submit-btn").addEventListener("click", function (event) {
+    
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
 
-    const firstNameInput = document.getElementById('firstName');
-    const lastNameInput = document.getElementById('lastName');
-    const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
-    const cityInput = document.getElementById('city');
-    const stateInput = document.getElementById('state');
-    const pincodeInput = document.getElementById('pincode');
+    
+ */
 
-    const firstNameValue = firstNameInput.value.trim();
-    const lastNameValue = lastNameInput.value.trim();
-    const emailValue = emailInput.value.trim();
-    const phoneValue = phoneInput.value.trim();
-    const cityValue = cityInput.value.trim();
-    const stateValue = stateInput.value.trim();
-    const pincodeValue = pincodeInput.value.trim();
-
-    // Validate First Name and Last Name (Should contain at least one alphabet)
-    const nameRegex = /^[A-Za-z]+$/;
-    if (!nameRegex.test(firstNameValue) || !nameRegex.test(lastNameValue)) {
-        alert('First Name and Last Name should contain at least one alphabet.');
-        return;
-    }
-
-    // Validate Email
+/* const nameRegex = /^[A-Za-z]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailValue)) {
-        alert('Please enter a valid email address.');
+    const phoneRegex = /^[0-9]{10}$/;
+    const alphanumericRegex = /^[A-Za-z\s]+$/;
+    const pincodeRegex = /^[0-9]{6}$/;
+
+
+    if (!nameRegex.test(firstname) && !nameRegex.test(lastname) && !emailRegex.test(email) && !phoneRegex.test(phone) &&
+        !alphanumericRegex.test(city) && !alphanumericRegex.test(state) && !pincodeRegex.test(pincode)) {
+        alert('Please fill the details before submitting!');
         return;
     }
 
-    // Validate Phone (10 digits)
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(phoneValue)) {
+    if (!nameRegex.test(firstname)) {
+        alert('First Name should contain at least one alphabet.');
+        return;
+    }
+    if (!nameRegex.test(lastname)) {
+        alert('Last Name should contain at least one alphabet.');
+        return;
+    }
+
+
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address. ');
+        return;
+    }
+
+
+    if (!phoneRegex.test(phone)) {
         alert('Phone number must be 10 digits.');
         return;
     }
 
-    // Validate City, State, and Pincode
-    const alphanumericRegex = /^[A-Za-z\s]+$/;
-    const pincodeRegex = /^[0-9]{6}$/;
-    if (
-        !alphanumericRegex.test(cityValue) ||
-        !alphanumericRegex.test(stateValue) ||
-        !pincodeRegex.test(pincodeValue)
-    ) {
-        alert('Please enter valid City, State, and Pincode.');
+    if (!alphanumericRegex.test(city)) {
+        alert('Please enter valid City name.');
+        return;
+    }
+    if (!alphanumericRegex.test(state)) {
+        alert('Please enter valid State name.');
         return;
     }
 
-    const bodyContent = `First Name: ${firstNameValue}\nLast Name: ${lastNameValue}\nEmail: ${emailValue}\nPhone: ${phoneValue}\nCity: ${cityValue}\nState: ${stateValue}\nPincode: ${pincodeValue}`;
-    const emailLink = `mailto:infinityschoolofbanking@gmail.com?subject=Contact Form Submission&body=${encodeURIComponent(bodyContent)}`;
-    window.location.href = emailLink;
+    if (!pincodeRegex.test(pincode)) {
+        alert('Please enter valid Pincode .');
+        return;
+    }
+ */
+/*  if (document.getElementById("contact-form").checkValidity()) {
+        sendEmail(firstname, lastname, email, phone, city, state, pincode);
+    } else {
+        alert('Please fill the details before submitting!');
+        return;
+    }
+}); */
+
+
+document.getElementById('submit-btn').addEventListener('click', function (event) {
+    event.preventDefault();
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var city = document.getElementById("city").value;
+    var state = document.getElementById("state").value;
+    var pincode = document.getElementById("pincode").value;
+    if (document.getElementById("contact-form").checkValidity()) {
+        sendEmail(firstname, lastname, email, phone, city, state, pincode);
+    } else {
+        alert('Please fill the details before submitting!');
+        return;
+    }
 });
+
+function sendEmail(firstname, lastname, email, phone, city, state, pincode) {
+    emailjs.init("EpRzmqV9waziTiQPv");
+
+    var params = {
+        from_name: firstname,
+        from_lastname: lastname,
+        from_email: email,
+        from_phone: phone,
+        from_city: city,
+        from_state: state,
+        from_pincode: pincode
+    };
+
+    emailjs.send("service_6yrfx0w", "template_p01dnrj", params)
+        .then(function (response) {
+            console.log("Email sent:", response);
+            alert("Email sent successfully!");
+            clearFormFields();
+        }, function (error) {
+            console.error("Email error:", error);
+            alert("Error sending email.");
+        });
+}
+
+function clearFormFields() {
+    document.getElementById("firstname").value = "";
+    document.getElementById("lastname").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("state").value = "";
+    document.getElementById("pincode").value = "";
+}

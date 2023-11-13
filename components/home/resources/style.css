@@ -60,7 +60,7 @@ li {
   z-index: 999;
   margin-top: auto;
   margin-bottom: auto;
-  
+
 }
 
 .nav-links a {
@@ -85,11 +85,11 @@ li {
   width: 70px;
   position: relative;
   top: 0px;
-  
+
 }
 
-#brandimg{
-  width:70px;
+#brandimg {
+  width: 70px;
   position: relative;
   bottom: 15px;
   left: 0px;
@@ -619,6 +619,9 @@ input[type=checkbox] {
 
   float: left;
   padding: 5rem;
+  padding-right: 0;
+  margin-left: 7rem;
+
 
 }
 
