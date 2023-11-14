@@ -659,14 +659,16 @@ input[type=checkbox] {
   @media (max-width: 1180px ) {
     
     .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 2rem;
-        padding-bottom: 10rem;
-        background: linear-gradient(to bottom, #8EA7E9, #A3D8F4);
-        overflow-y: hidden;
-        color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content:space-evenly;
+      height: auto;
+      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right:1rem;
+      padding-bottom:0;
+      overflow-y: visible !important;
+      background: linear-gradient(to bottom, #8EA7E9, #A3D8F4);
       }
       
   }

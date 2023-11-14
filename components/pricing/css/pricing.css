@@ -15,6 +15,11 @@
     border-radius: 5px;
 }
 
+::placeholder {
+    font-size: 12px;
+    /* text-wrap: wrap; */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -268,6 +273,11 @@
 
 
 @media (max-width: 768px) {
+
+    ::placeholder {
+        font-size: 10px;
+         text-wrap: wrap; 
+    }
     .card {
         width: 75%;
         margin-bottom: 50px;
