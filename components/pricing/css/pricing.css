@@ -335,5 +335,10 @@
         font-size: 17px;
     }
 
+    .h3tag1w {
+        text-wrap: wrap;
+    }
+
+
     /*forms*/
 }
